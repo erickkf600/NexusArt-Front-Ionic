@@ -1,0 +1,51 @@
+<!-- -->
+<ion-content class="auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding text-center>
+      <div class="logo"></div>
+      <h2 ion-text class="text-roxo">
+        <p>Muito bem! Vamos iniciar agora o seu cadastro.</p>
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form" method="post">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-roxo"></ion-icon>
+          Nome completo
+        </ion-label>
+        <ion-input type="text" name="nome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-roxo"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-roxo"></ion-icon>
+          Senha
+        </ion-label>
+        <ion-input type="password" name="senha"></ion-input>
+      </ion-item>
+    </form>
+
+    <div margin-top>
+      <button ion-button block color="dark" (click)="register()" tappable>
+        CADASTRAR
+      </button>
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="roxo" tappable (click)="login()">Já tenho uma conta</span>
+    </div>
+  </div>
+</ion-content>

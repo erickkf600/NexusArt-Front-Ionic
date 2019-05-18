@@ -1,0 +1,51 @@
+<!-- -->
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h2 ion-text class="text-roxo">
+        Que bom te ver por aqui!
+      </h2>
+       <!--SUBTÍTULO-->
+        <p ion-text class="text-roxo">
+          Entre com sua conta para continuar.
+        </p>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-roxo"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-roxo"></ion-icon>
+          Senha
+        </ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </form>
+    <!-- RECUPERAR SENHA -->
+    <p text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Esqueceu sua senha?</strong></p>
+
+    <div>
+      <button ion-button icon-start block color="roxo" tappable (click)="login()">
+        <ion-icon name="log-in"></ion-icon>
+        ENTRAR
+      </button>
+    </div>
+
+
+    <!-- NOVA CONTA -->
+    <div text-center margin-top>
+      <span ion-text color="secondary" tappable (click)="register()">Novo aqui? <strong>Cadastre-se</strong></span>
+    </div>
+  </div>
+</ion-content>
