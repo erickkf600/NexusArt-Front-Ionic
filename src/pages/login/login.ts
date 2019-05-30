@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {NavController, AlertController, ToastController, MenuController} from "ionic-angular";
+import {AuthProvider } from '../../providers/auth';
 import {HomePage} from "../home/home";
 import {RegisterPage} from "../register/register";
 
@@ -9,18 +10,35 @@ import {RegisterPage} from "../register/register";
 })
 export class LoginPage {
 
-  constructor(public nav: NavController, public forgotCtrl: AlertController, public menu: MenuController, public toastCtrl: ToastController) {
+
+  loginForm = {
+    email: '',
+    password: ''
+  };
+ 
+  constructor(public nav: NavController,
+    public forgotCtrl: AlertController,
+    public menu: MenuController,
+    public toastCtrl: ToastController,
+    private authProvider: AuthProvider) {
     this.menu.swipeEnable(false);
   }
-
-  // go to register page
+ 
+  
+  //Ir para página de cadastro
   register() {
     this.nav.setRoot(RegisterPage);
   }
 
-  // login and go to home page
-  login() {
-    this.nav.setRoot(HomePage);
+   //Login
+   fazerLogin(){
+    this.authProvider.login(this.loginForm)
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => {
+      console.log(err)
+    }) 
   }
 
   forgotPass() {
